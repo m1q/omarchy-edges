@@ -1,0 +1,4 @@
+/omarchy-edgesd
+/tests/test_engine
+/tests/e2e
+*.o

@@ -1,0 +1,15 @@
+[Unit]
+Description=Omarchy Edges: touchpad edge sliders
+After=graphical-session.target
+PartOf=graphical-session.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/omarchy-edgesd
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target

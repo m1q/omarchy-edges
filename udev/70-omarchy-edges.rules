@@ -1,0 +1,5 @@
+# omarchy-edges: let the user at the seat read touchpads and create the virtual
+# touchpad. uaccess grants access only to the active local session, and
+# only to touchpads (never keyboards).
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_TOUCHPAD}=="1", TAG+="uaccess"
+KERNEL=="uinput", SUBSYSTEM=="misc", TAG+="uaccess", OPTIONS+="static_node=uinput"
